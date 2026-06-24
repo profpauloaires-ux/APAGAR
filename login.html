@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Administrativo - J23</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>J23 - Consultoria em Informática e Redes</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="card-box text-center" style="max-width: 400px;">
+            <h3>Acesso Restrito</h3>
+            <form id="formLogin">
+                <div class="form-group">
+                    <label>Usuário:</label>
+                    <input type="text" id="usuario" required>
+                </div>
+                <div class="form-group">
+                    <label>Senha:</label>
+                    <input type="password" id="senha" required>
+                </div>
+                <button type="submit" class="btn-sucesso" style="width: 100%;">Entrar</button>
+                <p id="erroLogin" style="color: var(--danger); margin-top: 10px; display: none;">Dados incorretos!</p>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 J23 Consultoria - Soluções em Informática e Redes</p>
+    </footer>
+
+    <script type="module" src="login.js"></script>
+</body>
+</html>

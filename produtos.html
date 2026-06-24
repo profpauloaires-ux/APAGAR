@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J23 - Gestão de Inventário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>J23 - Painel Administrativo</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Ver Catálogo</a></li>
+                    <li><a href="#" onclick="logout()">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card-box">
+            <h2>Cadastrar Novo Produto</h2>
+            <form id="formProduto">
+                <div class="form-group">
+                    <label>Nome do Produto:</label>
+                    <input type="text" id="nome" required placeholder="Ex: Roteador Wireless">
+                </div>
+                <div class="form-group">
+                    <label>Categoria:</label>
+                    <select id="categoria">
+                        <option value="Redes">Redes</option>
+                        <option value="Hardware">Hardware</option>
+                        <option value="Servidores">Servidores</option>
+                        <option value="Periféricos">Periféricos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preço (R$):</label>
+                    <input type="number" id="preco" step="0.01" required placeholder="0.00">
+                </div>
+                <div class="form-group">
+                    <label>URL da Imagem:</label>
+                    <input type="text" id="urlImagem" placeholder="https://link-da-imagem.jpg">
+                </div>
+                <button type="submit" class="btn-sucesso">Salvar no Estoque</button>
+            </form>
+        </section>
+
+        <section class="card-box" style="max-width: 1000px;">
+            <h2>Itens em Estoque</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Produto</th>
+                        <th>Categoria</th>
+                        <th>Preço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <div id="modalEdicao" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Editar Produto</h3>
+            <form id="formEdicao">
+                <input type="hidden" id="edit-id">
+                
+                <div class="form-group">
+                    <label>Nome:</label>
+                    <input type="text" id="edit-nome" required>
+                </div>
+                <div class="form-group">
+                    <label>Categoria:</label>
+                    <select id="edit-categoria">
+                        <option value="Redes">Redes</option>
+                        <option value="Hardware">Hardware</option>
+                        <option value="Servidores">Servidores</option>
+                        <option value="Periféricos">Periféricos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preço (R$):</label>
+                    <input type="number" id="edit-preco" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label>URL da Imagem:</label>
+                    <input type="text" id="edit-urlImagem">
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="submit" class="btn-sucesso">Salvar Alterações</button>
+                    <button type="button" class="btn-perigo" onclick="fecharModal()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 J23 Consultoria - Soluções em Informática e Redes</p>
+    </footer>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Carrinho - J23</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Carrinho de Compras</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Continuar Comprando</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="card-box" style="max-width: 1000px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço Unit.</th>
+                        <th>Quantidade</th>
+                        <th>Subtotal</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoCarrinho">
+                    </tbody>
+            </table>
+            
+            <div class="text-center" style="margin-top: 30px; border-top: 2px solid #eee; padding-top: 20px;">
+                <h3 id="totalCarrinho" style="font-size: 1.8rem; color: var(--primary);">Total: R$ 0,00</h3>
+                <br>
+                <button class="btn-sucesso" onclick="finalizarPedido()" style="padding: 15px 30px; font-size: 1.1rem;">Finalizar Pedido</button>
+                <button class="btn-perigo" onclick="limparTodoCarrinho()" style="margin-left: 10px;">Esvaziar Carrinho</button>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="loja.js"></script>
+    <footer>
+        <p>&copy; 2026 J23 Consultoria - Soluções em Informática e Redes</p>
+    </footer>
+</body>
+</html>
